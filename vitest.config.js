@@ -1,15 +1,16 @@
-/// <reference types="vitest" />
 import { defineConfig } from "vitest/config";
 import path from "path";
+import { fileURLToPath } from "url";
 import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 export default defineConfig({
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  //@ts-ignore
   plugins: [vanillaExtractPlugin()],
   test: {
     globals: true,
     environment: "jsdom",
+
     setupFiles: [path.resolve(__dirname, "./src/shared/test/vitest-setup.ts")],
   },
   resolve: {
