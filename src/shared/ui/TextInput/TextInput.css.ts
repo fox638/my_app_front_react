@@ -1,9 +1,12 @@
 import { theme } from "@/shared/styles/theme";
 import { vars } from "@/shared/styles/vars.css";
-import { style } from "@vanilla-extract/css";
+import { style, createVar, fallbackVar } from "@vanilla-extract/css";
+
+export const marginTop = createVar();
 
 export const textInputContainerStyle = style({
   width: "100%",
+  marginTop: fallbackVar(marginTop, "0"),
 });
 
 export const textInputStyle = style({

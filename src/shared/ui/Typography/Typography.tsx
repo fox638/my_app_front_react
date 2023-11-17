@@ -8,14 +8,14 @@ import type { Property } from "csstype";
 import clsx from "clsx";
 import { vars } from "@/shared/styles/vars.css";
 import { theme } from "@/shared/styles/theme";
+import type { PolymorphicComponentProp } from "@/shared/types/polymorphicComponent";
 
-type TypographyProps<C extends ElementType> = {
-  as?: C;
+type TypographyProps = {
   variant?: keyof typeof vars.typography;
   color?: keyof typeof theme.colors;
   textAlign?: Property.TextAlign;
   className?: string;
-} & React.ComponentPropsWithoutRef<C>;
+};
 
 export const Typography = <C extends ElementType = "span">({
   as,
@@ -25,7 +25,7 @@ export const Typography = <C extends ElementType = "span">({
   className,
   color = "primaryDark",
   ...restProps
-}: TypographyProps<C>) => {
+}: PolymorphicComponentProp<C, TypographyProps>) => {
   const Component = as || "span";
   return (
     <Component

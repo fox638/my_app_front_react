@@ -1,8 +1,10 @@
-import { FC, InputHTMLAttributes, useId } from "react";
+import { CSSProperties, FC, InputHTMLAttributes, useId } from "react";
+import { assignInlineVars } from "@vanilla-extract/dynamic";
 import {
   textInputStyle,
   textInputContainerStyle,
   labelStyle,
+  marginTop,
 } from "./TextInput.css";
 import clsx from "clsx";
 import { Typography } from "../Typography";
@@ -11,6 +13,7 @@ interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
   containerClassName?: string;
   label?: string;
   error?: Nullable<ErrorType>;
+  mt?: string;
 }
 
 export const TextInput: FC<TextInputProps> = ({
@@ -20,12 +23,18 @@ export const TextInput: FC<TextInputProps> = ({
   label,
   id,
   error,
+  mt,
   ...rest
 }) => {
   const randomId = useId();
 
   return (
-    <div className={clsx(textInputContainerStyle, containerClassName)}>
+    <div
+      className={clsx(textInputContainerStyle, containerClassName)}
+      style={assignInlineVars({
+        [marginTop]: mt,
+      })}
+    >
       {label && (
         <Typography
           as="label"
