@@ -1,4 +1,4 @@
-import { CSSProperties, FC, InputHTMLAttributes, useId } from "react";
+import { FC, InputHTMLAttributes, useId } from "react";
 import { assignInlineVars } from "@vanilla-extract/dynamic";
 import {
   textInputStyle,

@@ -533,6 +533,11 @@
     "@babel/helper-validator-identifier" "^7.22.20"
     to-fast-properties "^2.0.0"
 
+"@effector/reflect@^8.3.3":
+  version "8.3.3"
+  resolved "https://registry.yarnpkg.com/@effector/reflect/-/reflect-8.3.3.tgz#93764fcb62f73b02b572d805efd7644bcbab9ba1"
+  integrity sha512-wgH5dIPjNGYVQGjwUiejiC9yRJ6yTyHbwc0deW1Sh69ApYFhPfMMV8b4wzMxfypAqSrmAFy+X3RDmbUluLKbQg==
+
 "@emotion/hash@^0.9.0":
   version "0.9.1"
   resolved "https://registry.yarnpkg.com/@emotion/hash/-/hash-0.9.1.tgz#4ffb0055f7ef676ebc3a5a91fb621393294e2f43"
@@ -4381,6 +4386,11 @@ pathval@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/pathval/-/pathval-1.1.1.tgz#8534e77a77ce7ac5a2512ea21e0fdb8fcf6c3d8d"
   integrity sha512-Dp6zGqpTdETdR63lehJYPeIOqpiNBNtc7BpWSLrOje7UaIsE5aY92r/AunQA7rsXvet3lrJ3JnZX29UPTKXyKQ==
+
+patronum@^1.20.0:
+  version "1.20.0"
+  resolved "https://registry.yarnpkg.com/patronum/-/patronum-1.20.0.tgz#6f537de8b9f6f035b485dec3c037760f87eeb8d4"
+  integrity sha512-UsUR8nUbSPJ0kEQPNorZ/0+Rwlk+c45O4BfqlLHAdRQvx1C7ZSfC9txfPwJo+fajRtzVLebZm1m+67+Ke9SgdA==
 
 picocolors@^1.0.0:
   version "1.0.0"
