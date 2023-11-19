@@ -21,7 +21,8 @@ export const RegistrationPage: React.FC<RegistrationPageProps> = () => {
 
   const handleFormSubmit = useEvent((e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    model.registretionFormSubmitted();
+
+    model.registrationFormSubmitted();
   });
 
   return (

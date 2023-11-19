@@ -2,11 +2,12 @@ import { defineConfig } from "vitest/config";
 import path from "path";
 import { fileURLToPath } from "url";
 import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
+import babel from "vite-plugin-babel";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
-  plugins: [vanillaExtractPlugin()],
+  plugins: [vanillaExtractPlugin(), babel()],
   test: {
     globals: true,
     environment: "jsdom",

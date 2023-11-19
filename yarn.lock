@@ -533,6 +533,11 @@
     "@babel/helper-validator-identifier" "^7.22.20"
     to-fast-properties "^2.0.0"
 
+"@effector/babel-plugin@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@effector/babel-plugin/-/babel-plugin-0.5.0.tgz#ba726884fc7f17703a77793537d3a456a5fdbd9b"
+  integrity sha512-X7gaBN6d53UIvpBjiMPqx1+RFlAQ4O9xTndbPdmcAgpkKOuzppWVZqjD+VMpwU+FowdONCvCtR4g3zJK0D11eQ==
+
 "@effector/reflect@^8.3.3":
   version "8.3.3"
   resolved "https://registry.yarnpkg.com/@effector/reflect/-/reflect-8.3.3.tgz#93764fcb62f73b02b572d805efd7644bcbab9ba1"
@@ -5210,6 +5215,11 @@ vite-node@^0.28.5:
     source-map "^0.6.1"
     source-map-support "^0.5.21"
     vite "^3.0.0 || ^4.0.0"
+
+vite-plugin-babel@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/vite-plugin-babel/-/vite-plugin-babel-1.1.3.tgz#4ce93f573f8f49e1760bce51b07860876f705c76"
+  integrity sha512-WE8ORQm8530kj0geiDL1r/+P2MaU0b+5wL5E8Jq07aounFwRIUeJXziGiMr2DFQs78vaefB5GRKh257M8Z6gFQ==
 
 "vite@^3.0.0 || ^4.0.0", vite@^4.1.4, vite@^4.4.5:
   version "4.5.0"

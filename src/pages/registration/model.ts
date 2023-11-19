@@ -6,8 +6,9 @@ import { HookReturnValue, LocationHook } from "wouter/use-location";
 import { createField } from "@/shared/lib/form/createField";
 import { AuthSignUpResponse } from "@/shared/api/gql/graphql";
 import { ROUTES } from "@/shared/styles/routes";
+import { reset } from "patronum";
 
-const registrationFx = attach({
+export const registrationFx = attach({
   effect: mutation.registrationFx,
 });
 
@@ -21,6 +22,8 @@ type RegistrationPageGateType = {
 };
 
 export const RegistrationPageGate = createGate<RegistrationPageGateType>();
+const pageMounted = RegistrationPageGate.open;
+
 const redirectLoginFx = createEffect(() => {
   const gate = RegistrationPageGate.state.getState();
   gate.setLocation(ROUTES.login);
@@ -34,10 +37,15 @@ export const [$password, passwordChange, $passwordError] =
 export const [$username, usernameChange, $usernameError] =
   createField<string>("");
 
-export const registretionFormSubmitted = createEvent();
+reset({
+  clock: pageMounted,
+  target: [$email, $emailError, $password, $passwordError],
+});
+
+export const registrationFormSubmitted = createEvent();
 
 sample({
-  clock: registretionFormSubmitted,
+  clock: registrationFormSubmitted,
   source: { email: $email, password: $password, username: $username },
   target: registrationFx,
 });
