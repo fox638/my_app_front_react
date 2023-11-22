@@ -1,10 +1,11 @@
 import { createEvent, createStore } from "effector";
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent, useEffect } from "react";
 import * as classes from "./login.page.css";
 import { reflect } from "@effector/reflect";
 import { Box } from "@/shared/ui/Box";
 import { TextInput } from "@/shared/ui/TextInput";
 import { Button } from "@/shared/ui/Button";
+import { useEvent } from "effector-react";
 
 interface LoginPageProps {}
 
@@ -22,6 +23,10 @@ export const $formPending = createStore(false);
 // endregion
 
 export const LoginPage: React.FC<LoginPageProps> = () => {
+  const pageOpenEvent = useEvent(pageOpen);
+  useEffect(() => {
+    pageOpenEvent();
+  }, [pageOpenEvent]);
   return (
     <div className={classes.container}>
       <Form className={classes.formContainer}>
